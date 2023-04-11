@@ -40,6 +40,7 @@ textarea {
     border-right: none;
     height: 40px;
     margin-bottom: 8px;
+    transition: all 300ms ease;
 }
 
 textarea {
@@ -51,6 +52,10 @@ textarea {
 input:hover,
 textarea:hover {
     border-color: #dcdfe6;
+}
+
+input:focus, textarea:focus {
+    border-color: #6666FF;
 }
 
 label {
@@ -75,6 +80,7 @@ section {
 }
 
 .click {
+    cursor: pointer;
     transition: all 300ms ease
 }
 
@@ -280,6 +286,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 
@@ -362,6 +369,60 @@ nav {
 .form__submit:active {
     border-color: #6666FF;
     color: #6666FF;
+}
+
+.modal__overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.modal__overlay--loading {
+    background-color: blue;
+    font-size: 80px;
+    
+}
+
+.modal__overlay--success {
+    background-color: #4bb543;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+    
+}
+
+.modal__overlay--visible {
+    z-index: 1;
+}
+
+
+.fa-spinner {
+    animation: spinner 750ms infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
 }
 
 /* PROJECT */
