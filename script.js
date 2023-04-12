@@ -1,6 +1,16 @@
-// 
-// 
-// 
+let isModalOpen = false
+let contrastToggle = false
+
+
+function toggleContrast() {
+    contrastToggle = !contrastToggle
+    if (contrastToggle) {
+    document.body.classList += " dark-mode"
+    }
+    else {
+        document.body.classList.remove("dark-mode")
+    }
+}
 
 function contact(event) {
     event.preventDefault()
@@ -25,7 +35,6 @@ function contact(event) {
 }
 
 
-let isModalOpen = false
 function toggleModal() {
     if (isModalOpen) {
         isModalOpen = false
